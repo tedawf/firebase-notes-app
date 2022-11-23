@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>11523286139-i934a7p2d2fobtabkf1dtou86541rcv4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.11523286139-i934a7p2d2fobtabkf1dtou86541rcv4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCEKUsSfYeMW_koCpQZkAReqLZEJBbTVHA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>11523286139</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.aweife.firebaseNotesApp</string>
+	<key>PROJECT_ID</key>
+	<string>notes-app-20221123</string>
+	<key>STORAGE_BUCKET</key>
+	<string>notes-app-20221123.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:11523286139:ios:027b2276e537dd5c9b2ede</string>
+</dict>
+</plist>

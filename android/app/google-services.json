@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "11523286139",
+    "project_id": "notes-app-20221123",
+    "storage_bucket": "notes-app-20221123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11523286139:android:563ed0d50f3d28d39b2ede",
+        "android_client_info": {
+          "package_name": "com.aweife.firebase_notes_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11523286139-9uvksdh304cvi9nj9osog8g3s66pdu4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADeuGeNbIxTG5bRDaN-DzYdnroj6dLdJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11523286139-9uvksdh304cvi9nj9osog8g3s66pdu4k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11523286139-i934a7p2d2fobtabkf1dtou86541rcv4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aweife.firebaseNotesApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
