@@ -1,5 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_notes_app/constants/routes.dart';
+import 'package:firebase_notes_app/services/auth/auth_exceptions.dart';
+import 'package:firebase_notes_app/services/auth/auth_service.dart';
 import 'package:firebase_notes_app/utilities/show_error_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -59,13 +60,13 @@ class _LoginViewState extends State<LoginView> {
               final email = _email.text;
               final password = _password.text;
               try {
-                await FirebaseAuth.instance.signInWithEmailAndPassword(
+                await AuthService.firebase().logIn(
                   email: email,
                   password: password,
                 );
-                final user = FirebaseAuth.instance.currentUser;
+                final user = AuthService.firebase().currentUser;
                 if (!mounted) return;
-                if (user?.emailVerified ?? false) {
+                if (user?.isEmailVerified ?? false) {
                   Navigator.of(context).pushNamedAndRemoveUntil(
                     notesRoute,
                     (route) => false,
@@ -76,15 +77,20 @@ class _LoginViewState extends State<LoginView> {
                     (route) => false,
                   );
                 }
-              } on FirebaseAuthException catch (e) {
+              } on UserNotFoundAuthException {
                 await showErrorDialog(
                   context,
-                  e.code,
+                  "User not found",
                 );
-              } catch (e) {
+              } on WrongPasswordAuthException {
                 await showErrorDialog(
                   context,
-                  e.toString(),
+                  "Wrong password",
+                );
+              } on GenericAuthException {
+                await showErrorDialog(
+                  context,
+                  "Authentication error",
                 );
               }
             },
