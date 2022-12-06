@@ -6,8 +6,10 @@ import 'package:firebase_notes_app/services/cloud/cloud_storage_exceptions.dart'
 class FirebaseCloudStorage {
   // singleton
   FirebaseCloudStorage._sharedInstance(); // private constructor
+
   static final FirebaseCloudStorage _shared =
       FirebaseCloudStorage._sharedInstance(); // calls private constructor
+
   factory FirebaseCloudStorage() => _shared; // factory constructor
 
   final notes = FirebaseFirestore.instance.collection("notes");

@@ -85,11 +85,6 @@ class DatabaseNote {
 }
 
 class NotesService {
-  Database? _db;
-  List<DatabaseNote> _notes = [];
-  DatabaseUser? _user;
-  late final StreamController<List<DatabaseNote>> _notesStreamController;
-
   // Singleton
   NotesService._sharedInstance() {
     _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
@@ -98,8 +93,15 @@ class NotesService {
       },
     );
   }
+
   static final NotesService _shared = NotesService._sharedInstance();
+
   factory NotesService() => _shared;
+
+  Database? _db;
+  List<DatabaseNote> _notes = [];
+  DatabaseUser? _user;
+  late final StreamController<List<DatabaseNote>> _notesStreamController;
 
   Stream<List<DatabaseNote>> get allNotes =>
       _notesStreamController.stream.filter(
