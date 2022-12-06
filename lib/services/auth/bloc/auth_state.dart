@@ -15,17 +15,13 @@ class AuthStateLoggedIn extends AuthState {
   final AuthUser user;
 }
 
-class AuthStateLoginFailure extends AuthState {
-  const AuthStateLoginFailure(this.exception);
-  final Exception exception;
-}
-
 class AuthStateNeedsVerification extends AuthState {
   const AuthStateNeedsVerification();
 }
 
 class AuthStateLoggedOut extends AuthState {
-  const AuthStateLoggedOut();
+  const AuthStateLoggedOut(this.exception);
+  final Exception? exception;
 }
 
 class AuthStateLogoutFailure extends AuthState {
