@@ -4,38 +4,55 @@ import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 abstract class AuthState {
-  const AuthState();
+  const AuthState({
+    required this.isLoading,
+    this.loadingText = "Please wait a moment",
+  });
+
+  final bool isLoading;
+  final String? loadingText;
 }
 
 class AuthStateUnintialized extends AuthState {
-  const AuthStateUnintialized();
+  const AuthStateUnintialized({required bool isLoading})
+      : super(isLoading: isLoading);
 }
 
 class AuthStateLoggedIn extends AuthState {
-  const AuthStateLoggedIn(this.user);
+  const AuthStateLoggedIn({
+    required this.user,
+    required bool isLoading,
+  }) : super(isLoading: isLoading);
 
   final AuthUser user;
 }
 
 class AuthStateNeedsVerification extends AuthState {
-  const AuthStateNeedsVerification();
+  const AuthStateNeedsVerification({required bool isLoading})
+      : super(isLoading: isLoading);
 }
 
 class AuthStateLoggedOut extends AuthState with EquatableMixin {
   const AuthStateLoggedOut({
     required this.exception,
-    required this.isLoading,
-  });
+    required bool isLoading,
+    String? loadingText,
+  }) : super(
+          isLoading: isLoading,
+          loadingText: loadingText,
+        );
 
   final Exception? exception;
-  final bool isLoading;
 
   @override
   List<Object?> get props => [exception, isLoading];
 }
 
 class AuthStateRegistering extends AuthState {
-  const AuthStateRegistering(this.exception);
+  const AuthStateRegistering({
+    required this.exception,
+    required bool isLoading,
+  }) : super(isLoading: isLoading);
 
   final Exception? exception;
 }
